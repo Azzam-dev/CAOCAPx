@@ -1,19 +1,11 @@
-import Image from "next/image";
-import { Inter } from "next/font/google";
-import styles from "./page.module.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import { Navbar, Description } from "../components";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          <code className={styles.code}>Explore, Build & Collaborate</code>
-          &nbsp;on mini MVP apps
-        </p>
-      </div>
-      <h1>Hello CAOCAPx</h1>
+    <main>
+      <Description />
+      <Navbar />
+      <h2>Hello CAOCAPx</h2>
     </main>
   );
 }

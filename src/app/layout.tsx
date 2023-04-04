@@ -1,5 +1,5 @@
 import { Analytics } from "@vercel/analytics/react";
-import "./globals.css";
+import "../styles/globals.css";
 
 export const metadata = {
   title: "CAOCAPx",
