@@ -13,6 +13,7 @@ export default function Home() {
           &nbsp;on mini MVP apps
         </p>
       </div>
+      <h1>Hello CAOCAPx</h1>
     </main>
   );
 }
