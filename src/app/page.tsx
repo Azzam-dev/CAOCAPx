@@ -1,10 +1,10 @@
-import { Navbar, Description } from "../components";
+import { AppBar, Description } from "../components";
 
 export default function Home() {
   return (
     <main>
       {/* <Description /> */}
-      <Navbar />
+      <AppBar />
       <h2>Hello CAOCAPx</h2>
     </main>
   );

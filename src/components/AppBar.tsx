@@ -8,7 +8,7 @@ import {
   CubeIcon,
 } from "@heroicons/react/24/solid";
 
-export default function Navbar() {
+export default function AppBar() {
   return (
     <>
       <Disclosure as="nav" className="bg-black">
