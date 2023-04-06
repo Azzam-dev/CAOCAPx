@@ -1,4 +1,4 @@
-import { AppBar, Description } from "../components";
+import { AppBar, NavBar, Description } from "../components";
 
 export default function Home() {
   return (
@@ -6,6 +6,7 @@ export default function Home() {
       {/* <Description /> */}
       <AppBar />
       <h2>Hello CAOCAPx</h2>
+      <NavBar />
     </main>
   );
 }
