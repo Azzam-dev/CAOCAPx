@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import {
   UserCircleIcon,
   MoonIcon,
@@ -12,7 +13,9 @@ export default function AppBar() {
     <div className="bg-black mx-auto px-2 sm:px-6 lg:px-8">
       <div className="relative flex h-16 items-center justify-between">
         <button type="button" className="p-1 text-yellow-500 hover:text-white ">
-          <CubeIcon className="h-7 w-7" />
+          <Link href="/hexcoin">
+            <CubeIcon className="h-7 w-7" />
+          </Link>
         </button>
         <div className="flex flex-1 items-center justify-center">
           <p>Explore</p>
@@ -22,13 +25,17 @@ export default function AppBar() {
             <MoonIcon className="h-5 w-5" />
           </button>
           <button type="button" className="p-1 text-gray-400 hover:text-white ">
-            <BellIcon className="h-5 w-5" aria-hidden="true" />
+            <Link href="/notifications">
+              <BellIcon className="h-5 w-5" aria-hidden="true" />
+            </Link>
           </button>
           <button
             type="button"
             className="p-1 text-purple-600 hover:text-white "
           >
-            <UserCircleIcon className="h-8 w-8" />
+            <Link href="/profile">
+              <UserCircleIcon className="h-8 w-8" />
+            </Link>
           </button>
         </div>
       </div>
