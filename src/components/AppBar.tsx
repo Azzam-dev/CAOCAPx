@@ -9,7 +9,7 @@ import {
 
 export default function AppBar() {
   return (
-    <div className="bg-black mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+    <div className="bg-black mx-auto px-2 sm:px-6 lg:px-8">
       <div className="relative flex h-16 items-center justify-between">
         <button type="button" className="p-1 text-yellow-500 hover:text-white ">
           <CubeIcon className="h-7 w-7" />
