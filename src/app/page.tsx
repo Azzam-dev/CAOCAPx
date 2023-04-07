@@ -1,11 +1,11 @@
-import { AppBar, NavBar, Description } from "../components";
+import { AppBar, NavBar, MasonryGrid, Description } from "../components";
 
 export default function Home() {
   return (
     <main>
       {/* <Description /> */}
       <AppBar />
-      <h2>Hello CAOCAPx</h2>
+      <MasonryGrid />
       <NavBar />
     </main>
   );
