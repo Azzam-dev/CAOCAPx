@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
+
 import {
   UserCircleIcon,
   MoonIcon,
@@ -29,12 +31,19 @@ export default function AppBar() {
               <BellIcon className="h-5 w-5" aria-hidden="true" />
             </Link>
           </button>
+
           <button
             type="button"
             className="p-1 text-purple-600 hover:text-white "
           >
             <Link href="/profile">
-              <UserCircleIcon className="h-8 w-8" />
+              <Image
+                className="rounded-full"
+                src="/avatar.jpg"
+                width={30}
+                height={30}
+                alt="Rounded avatar"
+              />
             </Link>
           </button>
         </div>
