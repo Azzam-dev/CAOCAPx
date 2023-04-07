@@ -1,9 +1,8 @@
-import { AppBar, NavBar, MasonryGrid, Description } from "../components";
+import { AppBar, NavBar, MasonryGrid } from "../components";
 
 export default function Home() {
   return (
     <main>
-      {/* <Description /> */}
       <AppBar />
       <MasonryGrid />
       <NavBar />
