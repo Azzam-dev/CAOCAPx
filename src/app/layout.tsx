@@ -16,7 +16,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Modal
-          isOpen
+          isOpen={false}
           title="Hello World"
           actionLabel="Submit"
           // secondaryAction={() => {}}
