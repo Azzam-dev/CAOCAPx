@@ -1,5 +1,5 @@
 import { Analytics } from "@vercel/analytics/react";
-import { Modal, AppBar, NavBar } from "../components";
+import { Modal, DialogModal, AppBar, NavBar } from "../components";
 import "../styles/globals.css";
 
 export const metadata = {
@@ -15,7 +15,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Modal title="Hello World" isOpen={true} />
+        <Modal
+          isOpen
+          title="Hello World"
+          actionLabel="Submit"
+          // secondaryAction={() => {}}
+          // secondaryActionLabel="Close"
+        />
+
+        {/* <DialogModal isOpen /> */}
         <AppBar />
         {children}
         <NavBar />
