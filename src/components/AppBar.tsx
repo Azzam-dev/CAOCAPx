@@ -1,14 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
+import Avatar from "./Avatar";
 
-import {
-  UserCircleIcon,
-  MoonIcon,
-  BellIcon,
-  CubeIcon,
-} from "@heroicons/react/24/solid";
+import { MoonIcon, BellIcon, CubeIcon } from "@heroicons/react/24/solid";
 
 export default function AppBar() {
   return (
@@ -31,21 +26,7 @@ export default function AppBar() {
               <BellIcon className="h-5 w-5" aria-hidden="true" />
             </Link>
           </button>
-
-          <button
-            type="button"
-            className="p-1 text-purple-600 hover:text-white"
-          >
-            <Link href="/profile">
-              <Image
-                className="rounded-full"
-                src="/avatar.jpg"
-                width={30}
-                height={30}
-                alt="Rounded avatar"
-              />
-            </Link>
-          </button>
+          <Avatar />
         </div>
       </div>
     </div>
