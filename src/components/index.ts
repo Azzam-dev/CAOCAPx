@@ -1,3 +1,4 @@
+import Logo from "./Logo";
 import AppBar from "./AppBar";
 import NavBar from "./NavBar";
 import MasonryGrid from "./MasonryGrid";

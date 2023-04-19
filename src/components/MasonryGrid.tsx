@@ -1,3 +1,5 @@
+"use client";
+
 export default function MasonryGrid() {
   return (
     <div className="p-4 gap-5 columns-2 md:columns-3 lg:columns-5 ">
