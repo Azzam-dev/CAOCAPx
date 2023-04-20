@@ -22,17 +22,17 @@ export default function Button({
       onClick={onClick}
       disabled={disabled}
       className={`
-      relative disabled:opacity-70 disabled:cursor-not-allowed rounded-lg hover:opacity-80 transition w-full 
+      relative w-full rounded-lg transition hover:opacity-80 disabled:cursor-not-allowed disabled:opacity-70 
       ${
         outline
           ? "bg-red border-gray text-black"
-          : "bg-blue-500 border-blue-500 text-white"
+          : "border-blue-500 bg-blue-500 text-white"
       }
 
       ${
         small
-          ? "py-1 text-sm font-light border-[1px]"
-          : "py-3 text-md font-semibold border-2"
+          ? "border-[1px] py-1 text-sm font-light"
+          : "text-md border-2 py-3 font-semibold"
       }
       `}
     >

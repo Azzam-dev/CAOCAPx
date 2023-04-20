@@ -7,7 +7,7 @@ import { MoonIcon, BellIcon, CubeIcon } from "@heroicons/react/24/solid";
 
 export default function AppBar() {
   return (
-    <div className="bg-black mx-auto px-2 sm:px-6 lg:px-8">
+    <div className="mx-auto bg-black px-2 sm:px-6 lg:px-8">
       <div className="relative flex h-16 items-center justify-between">
         <button type="button" className="p-1 text-yellow-500 hover:text-white">
           <Link href="/hexcoin">

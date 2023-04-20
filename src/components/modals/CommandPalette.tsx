@@ -45,7 +45,7 @@ export default function CommandPalette({ projects = [] }: CommandPaletteProps) {
     >
       <Dialog
         onClose={setIsOpen}
-        className="fixed inset-0 p-4 pt-[25vh] overflow-y-auto"
+        className="fixed inset-0 overflow-y-auto p-4 pt-[25vh]"
       >
         <Transition.Child
           enter="duration-300 ease-out"
@@ -73,7 +73,7 @@ export default function CommandPalette({ projects = [] }: CommandPaletteProps) {
               router.push(`/`); // router.push(`/projects/${project}`);
             }}
             as="div"
-            className="relative max-w-xl mx-auto rounded-xl overflow-hidden shadow-2xl ring-1 ring-black/5 divide-y divide-gray-100 bg-white"
+            className="relative mx-auto max-w-xl divide-y divide-gray-100 overflow-hidden rounded-xl bg-white shadow-2xl ring-1 ring-black/5"
           >
             <div className="flex items-center px-4">
               <MagnifyingGlassIcon className="h-6 w-6 text-gray-500" />
@@ -82,14 +82,14 @@ export default function CommandPalette({ projects = [] }: CommandPaletteProps) {
                   setQuery(event.target.value);
                   // TODO: handle search logic
                 }}
-                className="w-full h-12 text-sm text-gray-800 placeholder-gray-400 border-0 focus:ring-0 bg-transparent"
+                className="h-12 w-full border-0 bg-transparent text-sm text-gray-800 placeholder-gray-400 focus:ring-0"
                 placeholder="Search..."
               />
             </div>
             {filteredProjects.length > 0 && (
               <Combobox.Options
                 static
-                className="py-4 text-sm max-h-60 overflow-y-auto"
+                className="max-h-60 overflow-y-auto py-4 text-sm"
               >
                 {filteredProjects.map((project) => (
                   <Combobox.Option key={project} value={project}>
