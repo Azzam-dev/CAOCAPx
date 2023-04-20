@@ -9,6 +9,8 @@ export default function LoginModal() {
       isOpen={true}
       title="Hello World"
       actionLabel="Submit"
+      onClose={() => {}}
+      onSubmit={() => {}}
       // secondaryAction={() => {}}
       // secondaryActionLabel="Close"
     />
