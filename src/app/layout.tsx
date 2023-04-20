@@ -22,17 +22,18 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <CommandPalette
-          projects={[
-            "test1",
-            "test2",
-            "test3",
-            "test4",
-            "test5",
-            "test6",
-            "test7",
-            "test8",
-            "test9",
-            "test10",
+          paths={[
+            "home",
+            "about",
+            "blog",
+            "landing",
+            "login",
+            "signup",
+            "hexcoin",
+            "notifications",
+            "profile",
+            "profile/settings",
+            "profile/settings/editProfile",
           ]}
         />
         <AppBar />

@@ -12,16 +12,16 @@ import { Dialog, Combobox, Transition } from "@headlessui/react";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 
 interface CommandPaletteProps {
-  projects?: string[];
+  paths?: string[];
 }
 
-export default function CommandPalette({ projects = [] }: CommandPaletteProps) {
+export default function CommandPalette({ paths = [] }: CommandPaletteProps) {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const [query, setQuery] = useState("");
-  const filteredProjects = query
-    ? projects?.filter((project) =>
-        project.toLocaleLowerCase().includes(query.toLocaleLowerCase())
+  const filteredPaths = query
+    ? paths?.filter((path) =>
+        path.toLocaleLowerCase().includes(query.toLocaleLowerCase())
       )
     : [];
 
@@ -67,10 +67,10 @@ export default function CommandPalette({ projects = [] }: CommandPaletteProps) {
         >
           <Combobox
             value=""
-            onChange={(project) => {
+            onChange={(path) => {
               // TODO: Navigate user to selected option
               setIsOpen(false);
-              router.push(`/`); // router.push(`/projects/${project}`);
+              path == "home" ? router.push(`/`) : router.push(`/${path}`);
             }}
             as="div"
             className="relative mx-auto max-w-xl divide-y divide-gray-100 overflow-hidden rounded-xl bg-white shadow-2xl ring-1 ring-black/5"
@@ -80,19 +80,18 @@ export default function CommandPalette({ projects = [] }: CommandPaletteProps) {
               <Combobox.Input
                 onChange={(event) => {
                   setQuery(event.target.value);
-                  // TODO: handle search logic
                 }}
                 className="h-12 w-full border-0 bg-transparent text-sm text-gray-800 placeholder-gray-400 focus:ring-0"
                 placeholder="Search..."
               />
             </div>
-            {filteredProjects.length > 0 && (
+            {filteredPaths.length > 0 && (
               <Combobox.Options
                 static
                 className="max-h-60 overflow-y-auto py-4 text-sm"
               >
-                {filteredProjects.map((project) => (
-                  <Combobox.Option key={project} value={project}>
+                {filteredPaths.map((path) => (
+                  <Combobox.Option key={path} value={path}>
                     {({ active }) => (
                       <div
                         className={`px-4 py-2 
@@ -103,7 +102,7 @@ export default function CommandPalette({ projects = [] }: CommandPaletteProps) {
                             active ? "text-white" : "text-gray-900"
                           }`}
                         >
-                          {project}
+                          {path}
                         </p>
                       </div>
                     )}
@@ -112,7 +111,7 @@ export default function CommandPalette({ projects = [] }: CommandPaletteProps) {
               </Combobox.Options>
             )}
 
-            {query && filteredProjects.length == 0 && (
+            {query && filteredPaths.length == 0 && (
               <p className="px-4 py-2 text-sm text-gray-500">no results</p>
             )}
           </Combobox>
