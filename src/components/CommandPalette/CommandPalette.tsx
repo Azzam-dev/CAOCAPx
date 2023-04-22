@@ -12,10 +12,14 @@ import { Dialog, Combobox, Transition } from "@headlessui/react";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 
 interface CommandPaletteProps {
+  // isOpen: boolean;
   paths?: string[];
 }
 
-export default function CommandPalette({ paths = [] }: CommandPaletteProps) {
+export default function CommandPalette({
+  paths = [],
+}: // isOpen,
+CommandPaletteProps) {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const [query, setQuery] = useState("");

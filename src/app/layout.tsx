@@ -1,4 +1,5 @@
 import { Analytics } from "@vercel/analytics/react";
+import ReduxProvider from "../redux/ReduxProvider";
 import { CommandPalette, AppBar } from "../components";
 import "../styles/globals.css";
 
@@ -15,23 +16,25 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <CommandPalette
-          paths={[
-            "home",
-            "about",
-            "blog",
-            "landing",
-            "login",
-            "signup",
-            "hexcoin",
-            "notifications",
-            "profile",
-            "profile/settings",
-            "profile/settings/editProfile",
-          ]}
-        />
-        <AppBar />
-        {children}
+        <ReduxProvider>
+          <CommandPalette
+            paths={[
+              "home",
+              "about",
+              "blog",
+              "landing",
+              "login",
+              "signup",
+              "hexcoin",
+              "notifications",
+              "profile",
+              "profile/settings",
+              "profile/settings/editProfile",
+            ]}
+          />
+          <AppBar />
+          {children}
+        </ReduxProvider>
       </body>
       <Analytics />
     </html>
