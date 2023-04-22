@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Avatar from "./Avatar";
+import CommandPaletteButton from "./CommandPalette/CommandPaletteButton";
 
 import { MoonIcon, BellIcon, CubeIcon } from "@heroicons/react/24/solid";
 
@@ -17,17 +18,8 @@ export default function AppBar() {
         <div className="flex flex-1 items-center justify-center">
           <p>Explore</p>
         </div>
-        <div>
-          <button type="button" className="p-1 text-gray-400 hover:text-white">
-            <MoonIcon className="h-5 w-5" />
-          </button>
-          <button type="button" className="p-1 text-gray-400 hover:text-white">
-            <Link href="/notifications">
-              <BellIcon className="h-5 w-5" aria-hidden="true" />
-            </Link>
-          </button>
-          <Avatar />
-        </div>
+        <CommandPaletteButton />
+        <Avatar />
       </div>
     </div>
   );

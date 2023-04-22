@@ -1,11 +1,5 @@
 import { Analytics } from "@vercel/analytics/react";
-import {
-  Modal,
-  DialogModal,
-  LoginModal,
-  CommandPalette,
-  AppBar,
-} from "../components";
+import { CommandPalette, AppBar } from "../components";
 import "../styles/globals.css";
 
 export const metadata = {
