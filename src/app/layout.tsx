@@ -1,7 +1,7 @@
 import { Analytics } from "@vercel/analytics/react";
-import ReduxProvider from "../redux/ReduxProvider";
-import { CommandPalette, AppBar } from "../components";
-import "../styles/globals.css";
+import ReduxProvider from "@/redux/ReduxProvider";
+import { CommandPalette, AppBar } from "@/components";
+import "@/styles/globals.css";
 
 export const metadata = {
   title: "CAOCAPx",
@@ -17,21 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <ReduxProvider>
-          <CommandPalette
-            paths={[
-              "home",
-              "about",
-              "blog",
-              "landing",
-              "login",
-              "signup",
-              "hexcoin",
-              "notifications",
-              "profile",
-              "profile/settings",
-              "profile/settings/editProfile",
-            ]}
-          />
+          <CommandPalette />
           <AppBar />
           {children}
         </ReduxProvider>

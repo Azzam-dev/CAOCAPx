@@ -8,47 +8,57 @@
 
 import { useState, useEffect, Fragment } from "react";
 import { useRouter } from "next/navigation";
+
+import { store } from "@/redux/store";
+import { useAppDispatch, useAppSelector } from "@/redux/hooks";
+import {
+  presentCommandPalette,
+  hideCommandPalette,
+  setCommandPaletteQuery,
+} from "@/redux/features/CommandPaletteSlice";
+
 import { Dialog, Combobox, Transition } from "@headlessui/react";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 
-interface CommandPaletteProps {
-  // isOpen: boolean;
-  paths?: string[];
-}
+export default function CommandPalette() {
+  const dispatch = useAppDispatch();
+  const isPresented = useAppSelector(
+    (state) => state.commandPalette.isPresented
+  );
 
-export default function CommandPalette({
-  paths = [],
-}: // isOpen,
-CommandPaletteProps) {
   const router = useRouter();
-  const [isOpen, setIsOpen] = useState(false);
+
   const [query, setQuery] = useState("");
   const filteredPaths = query
-    ? paths?.filter((path) =>
-        path.toLocaleLowerCase().includes(query.toLocaleLowerCase())
-      )
+    ? store
+        .getState()
+        .commandPalette.paths?.filter((path) =>
+          path.toLocaleLowerCase().includes(query.toLocaleLowerCase())
+        )
     : [];
 
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
       if (event.key == "k" && (event.metaKey || event.ctrlKey)) {
-        setIsOpen(!isOpen);
+        isPresented
+          ? dispatch(hideCommandPalette())
+          : dispatch(presentCommandPalette());
       }
     }
     window.addEventListener("keydown", onKeyDown);
     return () => {
       window.removeEventListener("keydown", onKeyDown);
     };
-  }, [isOpen]);
+  }, [isPresented]);
 
   return (
     <Transition.Root
-      show={isOpen}
+      show={isPresented}
       as={Fragment}
       afterLeave={() => setQuery("")}
     >
       <Dialog
-        onClose={setIsOpen}
+        onClose={() => dispatch(hideCommandPalette())}
         className="fixed inset-0 overflow-y-auto p-4 pt-[25vh]"
       >
         <Transition.Child
@@ -73,7 +83,7 @@ CommandPaletteProps) {
             value=""
             onChange={(path) => {
               // TODO: Navigate user to selected option
-              setIsOpen(false);
+              dispatch(hideCommandPalette());
               path == "home" ? router.push(`/`) : router.push(`/${path}`);
             }}
             as="div"
