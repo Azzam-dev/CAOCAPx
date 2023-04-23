@@ -22,8 +22,9 @@ export default function NavBar() {
         styleOverrides: {
           root: {
             position: "fixed",
-            bottom: 50,
-            width: 300,
+            bottom: 25,
+            height: 50,
+            width: 230,
             backgroundColor: "black",
             borderRadius: 10,
           },
@@ -50,15 +51,12 @@ export default function NavBar() {
           }}
         >
           <BottomNavigationAction
-            label="Explore"
             icon={<RocketLaunchIcon className="h-6 w-6" aria-hidden="true" />}
           />
           <BottomNavigationAction
-            label="Build"
             icon={<HomeIcon className="h-6 w-6" aria-hidden="true" />}
           />
           <BottomNavigationAction
-            label="Colab"
             icon={<UserGroupIcon className="h-6 w-6" aria-hidden="true" />}
           />
         </BottomNavigation>
