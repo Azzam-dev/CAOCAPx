@@ -53,7 +53,7 @@ export default function CommandPalette() {
 
   return (
     <Transition.Root
-      show={isPresented}
+      show={isPresented.valueOf()}
       as={Fragment}
       afterLeave={() => setQuery("")}
     >
