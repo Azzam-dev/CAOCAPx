@@ -49,7 +49,7 @@ export default function CommandPalette() {
     return () => {
       window.removeEventListener("keydown", onKeyDown);
     };
-  }, [isPresented]);
+  }, [isPresented, dispatch]);
 
   return (
     <Transition.Root
