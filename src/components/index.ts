@@ -10,6 +10,7 @@ import NavBar from "./NavBar";
 import Search from "./Search";
 import Button from "./Button";
 import MasonryGrid from "./MasonryGrid";
+import MainContextMenu from "./ContextMenu/MainContextMenu";
 
 export {
   Logo,
@@ -17,10 +18,12 @@ export {
   DialogModal,
   LoginModal,
   CommandPalette,
+  CommandPaletteButton,
   AppBar,
   Avatar,
   NavBar,
   Search,
   Button,
   MasonryGrid,
+  MainContextMenu,
 };
