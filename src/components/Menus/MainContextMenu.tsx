@@ -21,8 +21,8 @@ export default function ContextMenuDemo() {
       <ContextMenu.Portal>
         <ContextMenu.Content
           className="min-w-[220px] overflow-hidden rounded-md bg-white p-[5px] shadow-[0px_10px_38px_-10px_rgba(22,_23,_24,_0.35),_0px_10px_20px_-15px_rgba(22,_23,_24,_0.2)]"
-          sideOffset={5}
-          align="end"
+          // sideOffset={5} // TODO: look in to this error message( if this takes longer than a week just remove it 24/4/2023)
+          // align="end"
         >
           <ContextMenu.Item className="group relative flex h-[25px] select-none items-center rounded-[3px] px-[5px] pl-[25px] text-[13px] leading-none text-violet11 outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-violet9 data-[disabled]:text-mauve8 data-[highlighted]:text-violet1">
             Back{" "}
