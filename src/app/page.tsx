@@ -1,13 +1,11 @@
 // determination is my name, I will do this no matter what
 
-import { NavBar, MasonryGrid } from "@/components";
+import Main from "./Main";
 
 export default function Home() {
   return (
     <main>
-      <MasonryGrid />
-
-      <NavBar />
+      <Main />
     </main>
   );
 }

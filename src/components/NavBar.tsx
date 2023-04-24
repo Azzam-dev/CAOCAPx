@@ -1,6 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useAppDispatch, useAppSelector } from "@/redux/hooks";
+import { setSelectedNavBarView } from "@/redux/features/NavBarSlice";
+
 import {
   ThemeProvider,
   BottomNavigation,
@@ -15,7 +17,9 @@ import {
 } from "@heroicons/react/24/solid";
 
 export default function NavBar() {
-  const [value, setValue] = useState(0);
+  const dispatch = useAppDispatch();
+  const selectedView = useAppSelector((state) => state.navBar.selectedView);
+
   const theme = createTheme({
     components: {
       MuiBottomNavigation: {
@@ -45,10 +49,10 @@ export default function NavBar() {
     >
       <ThemeProvider theme={theme}>
         <BottomNavigation
-          value={value}
-          onChange={(event, newValue) => {
-            setValue(newValue);
-          }}
+          value={selectedView}
+          onChange={(event, newValue) =>
+            dispatch(setSelectedNavBarView(newValue))
+          }
         >
           <BottomNavigationAction
             icon={<RocketLaunchIcon className="h-6 w-6" aria-hidden="true" />}
