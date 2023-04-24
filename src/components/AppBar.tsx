@@ -1,10 +1,12 @@
 "use client";
 
 import Link from "next/link";
+import * as Label from "@radix-ui/react-label";
+
 import Avatar from "./Avatar";
 import CommandPaletteButton from "./CommandPalette/CommandPaletteButton";
 
-import { MoonIcon, BellIcon, CubeIcon } from "@heroicons/react/24/solid";
+import { CubeIcon } from "@heroicons/react/24/solid";
 
 export default function AppBar() {
   return (
@@ -16,7 +18,7 @@ export default function AppBar() {
           </Link>
         </button>
         <div className="flex flex-1 items-center justify-center">
-          <p>Explore</p>
+          <Label.Root>Explore</Label.Root>
         </div>
         <CommandPaletteButton />
         <Avatar />

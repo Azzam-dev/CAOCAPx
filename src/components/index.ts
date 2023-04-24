@@ -15,6 +15,7 @@ import MasonryGrid from "./MasonryGrid";
 
 import MainContextMenu from "./Menus/MainContextMenu";
 import DropdownMenuDemo from "./Menus/DropdownMenuDemo";
+import NavigationMenuDemo from "./Menus/NavigationMenuDemo";
 
 export {
   Logo,
@@ -31,4 +32,5 @@ export {
   MasonryGrid,
   MainContextMenu,
   DropdownMenuDemo,
+  NavigationMenuDemo,
 };

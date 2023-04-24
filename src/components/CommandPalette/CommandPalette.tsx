@@ -17,6 +17,7 @@ import {
   setCommandPaletteQuery,
 } from "@/redux/features/CommandPaletteSlice";
 
+import * as Label from "@radix-ui/react-label";
 import { Dialog, Combobox, Transition } from "@headlessui/react";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 
@@ -111,13 +112,13 @@ export default function CommandPalette() {
                         className={`px-4 py-2 
                     ${active ? "bg-indigo-600" : "bg-transparent"}`}
                       >
-                        <p
+                        <Label.Root
                           className={`font-medium ${
                             active ? "text-white" : "text-gray-900"
                           }`}
                         >
                           {path}
-                        </p>
+                        </Label.Root>
                       </div>
                     )}
                   </Combobox.Option>
