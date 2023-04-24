@@ -1,5 +1,13 @@
 const plugin = require("tailwindcss/plugin");
-const { blackA, mauve, violet, purple, indigo } = require("@radix-ui/colors");
+const {
+  blackA,
+  green,
+  mauve,
+  slate,
+  violet,
+  purple,
+  indigo,
+} = require("@radix-ui/colors");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -15,12 +23,28 @@ module.exports = {
     extend: {
       colors: {
         ...blackA,
+        ...green,
         ...mauve,
+        ...slate,
         ...violet,
         ...purple,
         ...indigo,
       },
       keyframes: {
+        hide: {
+          from: { opacity: 1 },
+          to: { opacity: 0 },
+        },
+        slideIn: {
+          from: {
+            transform: "translateX(calc(100% + var(--viewport-padding)))",
+          },
+          to: { transform: "translateX(0)" },
+        },
+        swipeOut: {
+          from: { transform: "translateX(var(--radix-toast-swipe-end-x))" },
+          to: { transform: "translateX(calc(100% + var(--viewport-padding)))" },
+        },
         slideDownAndFade: {
           from: { opacity: 0, transform: "translateY(-2px)" },
           to: { opacity: 1, transform: "translateY(0)" },
@@ -71,6 +95,9 @@ module.exports = {
         },
       },
       animation: {
+        hide: "hide 100ms ease-in",
+        slideIn: "slideIn 150ms cubic-bezier(0.16, 1, 0.3, 1)",
+        swipeOut: "swipeOut 100ms ease-out",
         slideDownAndFade:
           "slideDownAndFade 400ms cubic-bezier(0.16, 1, 0.3, 1)",
         slideLeftAndFade:

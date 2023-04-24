@@ -17,6 +17,8 @@ import MainContextMenu from "./Menus/MainContextMenu";
 import DropdownMenuDemo from "./Menus/DropdownMenuDemo";
 import NavigationMenuDemo from "./Menus/NavigationMenuDemo";
 
+import ToastDemo from "./Toast/ToastDemo";
+
 export {
   Logo,
   Modal,
@@ -33,4 +35,5 @@ export {
   MainContextMenu,
   DropdownMenuDemo,
   NavigationMenuDemo,
+  ToastDemo,
 };
