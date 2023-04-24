@@ -9,7 +9,7 @@ import Colab from "./Colab";
 export default function Main() {
   // TODO: think of a better name for this component
   const selectedView = useAppSelector((state) => state.navBar.selectedView);
-  const views = [<Explore />, <Build />, <Colab />];
+  const views = [<Explore key={0} />, <Build key={1} />, <Colab key={2} />];
   return (
     <>
       {views[selectedView]}
